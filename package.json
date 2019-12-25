@@ -5,7 +5,7 @@
 		"type": "git",
 		"url": "https://github.com/zyctree/vscode-diff-default"
 	},
-	"displayName": "DiffDefault",
+	"displayName": "Diff Default",
 	"description": "diff the open file with the default file or folder",
 	"version": "0.0.4",
 	"engines": {
