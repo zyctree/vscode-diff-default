@@ -25,6 +25,13 @@
 				"title": "Diff Default"
 			}
 		],
+        "keybindings": [
+            {
+                "command": "diffdefault",
+				"key": "f7",
+				"when": "editorTextFocus"
+            }
+		],
 		"configuration": [
 			{
 				"title": "DiffDefault",

@@ -1,6 +1,8 @@
 # Diff Default
 
-Diff the current file with the default file
+Diff the current opened file with the default
+
+with shorcut `"f7"`
 
 (by some rules)
 
@@ -64,5 +66,5 @@ in `project1`, put the following json in file `.vscode/settings.json`
 now, open `project1` as a workspace, and open the file `src/file.txt`, run `diffdefault`
 in the command palette (`f1` or `ctrl`+ `P`).
 
-![example](example/example.gif "example")
+![example](https://raw.githubusercontent.com/zyctree/vscode-diff-default/master/example/example.gif "example")
 
