@@ -1,8 +1,41 @@
 # Diff Default
 
-Open the diff panel with a single simple command, or a shorcut
+Diff the current file with the default file
 
-## features
+(by some rules)
+
+## rules
+
+setting the default diff file of `file1.txt` to `file2.txt`
+
+```json
+{
+    "diffdefault.rules": [
+        // in user settings
+        ["absolute_path/file1.txt", "absolute_path/file2.txt"],
+        // or in workspace settings
+        ["relative_path/file1.txt", "absolute_path/file2.txt"],
+        ["relative_path/file1.txt", "relative_path/file2.txt"],
+    ]
+}
+```
+
+setting the default diff file of `project1/file.txt` to `project2/file.txt`
+
+
+```json
+{
+    "diffdefault.rules": [
+        // in user settings
+        ["absolute_path/project1", "absolute_path/project2"],
+        // or in workspace settings
+        ["relative_path/project1", "absolute_path/project2"],
+        ["relative_path/project1", "relative_path/project2"],
+    ]
+}
+```
+
+
 
 ## example
 
