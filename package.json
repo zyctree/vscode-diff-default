@@ -9,7 +9,7 @@
 	"description": "diff the open file with the default file or folder",
 	"version": "0.0.6",
 	"engines": {
-		"vscode": "^1.41.0"
+		"vscode": "^1.36.0"
 	},
 	"categories": [
 		"Other"
