@@ -8,7 +8,7 @@ Diff the current file with the default file
 
 setting the default diff file of `file1.txt` to `file2.txt`
 
-```json
+```json5
 {
     "diffdefault.rules": [
         // in user settings
@@ -23,7 +23,7 @@ setting the default diff file of `file1.txt` to `file2.txt`
 setting the default diff file of `project1/file.txt` to `project2/file.txt`
 
 
-```json
+```json5
 {
     "diffdefault.rules": [
         // in user settings
