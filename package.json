@@ -7,7 +7,7 @@
 	},
 	"displayName": "Diff Default",
 	"description": "diff the open file with the default file or folder",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"engines": {
 		"vscode": "^1.7.0"
 	},
