@@ -3,10 +3,11 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 
-function handleRules(opened: vscode.Uri, rules?: string[][], root?: string) {
+function handleRules(editor: vscode.TextEditor, rules?: string[][], root?: string) {
 	if (!rules) {
 		return false;
 	}
+	const opened = editor.document.uri;
 	for (const rule of rules) {
 		if (rule.length !== 2) {
 			continue;
@@ -30,7 +31,10 @@ function handleRules(opened: vscode.Uri, rules?: string[][], root?: string) {
 			const path1 = opened.path.replace(prefix0, prefix1);
 			const uri1 = opened.with({ path: path1 });
 			const title = `${rule[1]} <-> ${path.basename(opened.path)}`;
-			vscode.commands.executeCommand("vscode.diff", uri1, opened, title);
+
+			const selection = editor.selection;
+			vscode.commands.executeCommand("vscode.diff", uri1, opened, title,
+				{ viewColumn: vscode.ViewColumn.Active, selection });
 			return true;
 		}
 	}
@@ -49,14 +53,13 @@ export function activate(context: vscode.ExtensionContext) {
 		if (!editor) {
 			return null;
 		}
-		const opened = editor.document.uri;
 		// vscode.window.showInformationMessage(`${opened.path}`);
 
 		const all_rules = vscode.workspace.getConfiguration('diffdefault').inspect<string[][]>("rules");
 		const workspace = vscode.workspace.rootPath;
-		if (handleRules(opened, all_rules?.workspaceFolderValue, workspace) ||
-			handleRules(opened, all_rules?.workspaceValue, workspace) ||
-			handleRules(opened, all_rules?.globalValue, workspace)) { }
+		if (handleRules(editor, all_rules?.workspaceFolderValue, workspace) ||
+			handleRules(editor, all_rules?.workspaceValue, workspace) ||
+			handleRules(editor, all_rules?.globalValue, workspace)) { }
 	});
 
 	context.subscriptions.push(disposable);
